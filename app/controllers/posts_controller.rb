@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, only: [ :new, :create ]
+
+  def index
+    @posts = Post.by_recency
+  end
 
   def new
     @post = Post.new

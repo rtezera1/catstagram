@@ -19,7 +19,7 @@ feature 'user adds a post', %q{
 
     visit new_post_path
 
-    fill_in 'Image', with: "http://www.cats.com/cat1.jpg"
+    attach_file 'Image', File.join( Rails.root, '/spec/fixtures/index.jpg' )
     fill_in 'Description', with: 'Sleeping cat'
     click_on 'Create Post'
 
@@ -35,5 +35,10 @@ feature 'user adds a post', %q{
     click_on 'Create Post'
 
     expect(page).to have_content 'There were some errors with your Post.'
+  end
+
+  scenario 'an unauthenticated user tries to add a new post' do 
+    visit new_post_path
+    expect(page).to have_content "You need to sign in or sign up before continuing. Sign in Email Password Remember me Sign upForgot your password?"
   end
 end

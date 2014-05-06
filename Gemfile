@@ -33,6 +33,9 @@ gem 'devise'
 # Use for creating forms
 gem 'simple_form'
 
+# Use to upload images
+gem 'carrierwave'
+
 group :development, :test do 
   gem 'dotenv-rails'
   gem 'pry-rails'
@@ -44,6 +47,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda'
   gem 'quiet_assets'
+  gem 'orderly'
 end
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
