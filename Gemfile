@@ -27,6 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Used to generate User model
+gem 'devise'
+
 group :development, :test do 
   gem 'dotenv-rails'
   gem 'pry-rails'
