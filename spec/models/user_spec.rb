@@ -18,5 +18,8 @@ describe User do
     it { should_not have_valid(:email).when("wasd", "kitty.com", "ki@", nil, "") }
     it { should validate_uniqueness_of(:email) }
   end
+
+  it { should have_many(:posts).dependent(:destroy) }
+
   pending "add some examples to (or delete) #{__FILE__}"
 end

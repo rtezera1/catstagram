@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Used to generate User model
 gem 'devise'
 
+# Use for creating forms
+gem 'simple_form'
+
 group :development, :test do 
   gem 'dotenv-rails'
   gem 'pry-rails'
