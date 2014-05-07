@@ -21,5 +21,7 @@ describe User do
 
   it { should have_many(:posts).dependent(:destroy) }
 
+  it { should have_many(:meows).dependent(:destroy) }
+
   pending "add some examples to (or delete) #{__FILE__}"
 end

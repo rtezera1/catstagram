@@ -13,4 +13,14 @@ class Post < ActiveRecord::Base
   def self.by_recency
     order(created_at: :desc)
   end
+
+  has_many :meows,
+    dependent: :destroy,
+    inverse_of: :post
+
+  def has_meow_from?(user)
+    meows.from(user).present?
+  end
+
+
 end
