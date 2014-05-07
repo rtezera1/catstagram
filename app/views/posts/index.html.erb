@@ -1,9 +1,13 @@
-<h1>Meow</h1>
 
-<% if user_signed_in? %>
-  <% if post.has_meow_from?(current_user) %>
-    <%= button_to ' Remove Meow', post_meows_path(post, post.meow_from(current_user)), method: :delete %>
-  <% else %>
-    <% button_to 'Meow', post_meows_path(post), method: :post %>
+<% @posts.each do |post| %>
+  <% if user_signed_in? %>
+    <%= image_tag post.image.url %>
+     <p><%= post.description %></p>
+    <% if post.has_meow_from?(current_user) %>
+      <%= button_to "Remove Meow", post_meow_path(post, post.meow_from(current_user)),
+        method: :delete %>
+    <% else %>
+      <%= button_to "Meow", post_meows_path(post), method: :post %>
+    <% end %>
   <% end %>
 <% end %>
